@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>React</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app"></div>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script>
+            const c = React.createElement(
+                'div',
+                {},
+                'this.props.info'
+            )
+            const b = React.createElement(
+                'div',
+                { className: 'page', info: 'You Are' },
+                c
+            )
+            const page = React.createElement(
+                React.StrictMode,
+                {},
+                b
+            );
+            ReactDOM.render(
+                page,
+                document.getElementById('app')
+            )
+            console.log(React)
+            console.log(b)
+        </script>
+    </body>
+</html>
