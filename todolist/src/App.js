@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
+import Header from './Pages/Header'
+import Footer from './Pages/Footer'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      msg: 111
+    }
+  }
+  render(){
+    return (
+      <div className="App">
+        <Router>
+          <Route path="/header" render={() => <Header msg={this.state.msg} doClick={this.handleClick.bind(this)} />} />
+          <Route path="/footer" component={Footer} />
+          <Redirect from="*" to="header" />
+        </Router>
+      </div>
+    )
+  }
+  handleClick(val){
+    this.setState(state => {
+      state.msg += 1;
+      return state
+    })
+  }
 }
 
 export default App;
