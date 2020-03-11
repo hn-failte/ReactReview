@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>React</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script>
+            let msg = 0;
+            function render() {
+                let App = React.createElement(
+                    'h1',
+                    { className: 'app' },
+                    msg
+                );
+                ReactDOM.render(
+                    App, // 需要渲染的组件
+                    document.getElementById('root'), // 渲染的位置节点
+                    () => { console.log("ok") } // 渲染完成后的回调
+                )
+            }
+
+            render('hash');
+            document.getElementById('root').onclick = () => {
+                msg++;
+                render()
+            }
+        </script>
+    </body>
+</html>
