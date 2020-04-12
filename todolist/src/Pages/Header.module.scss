@@ -1,4 +1,9 @@
-.header-link{
+:local .header {
+  margin: 0 auto;
+  width: 600px;
+  height: 100vh;
+  background: #f0f0f0;
+  .header-link {
     margin: 0 auto;
     display: block;
     width: 100px;
@@ -7,12 +12,5 @@
     text-decoration: none;
     color: #333;
     background: orange;
-}
-:global{
-    .header{
-        margin: 0 auto;
-        width: 600px;
-        height: 100vh;
-        background: #f0f0f0;
-    }
+  }
 }

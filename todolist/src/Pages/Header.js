@@ -14,7 +14,7 @@ export default class extends React.Component{
         let {key} = this.state
         let {doClick, msg} = this.props;
         return (
-            <div className="header">
+            <div className={style.header}>
                 <Title key={key}></Title>
                 <NavLink to="/footer" className={style['header-link']}>to Footer</NavLink>
                 <button onClick={doClick}>{msg}</button>
