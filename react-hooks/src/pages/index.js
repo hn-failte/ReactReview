@@ -55,4 +55,10 @@ export default [
     path: '/hooks4',
     component: React.lazy(() => import('./Hooks4')),
   },
+  {
+    status: 2,
+    title: 'memo、useMemo',
+    path: '/memo',
+    component: React.lazy(() => import('./Memo')),
+  },
 ]
